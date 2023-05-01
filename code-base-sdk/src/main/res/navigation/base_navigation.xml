@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/base_navigation"
+    app:startDestination="@id/search_fragment">
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="dev.xascar.codebase_sdk.ui.ItemsFragment"
+        android:label="Characters"
+        tools:layout="@layout/fragment_items">
+        <action
+            android:id="@+id/action_search_fragment_to_details_fragment"
+            app:destination="@id/details_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="dev.xascar.codebase_sdk.ui.DetailsFragment"
+        android:label="{nameId}"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="nameId"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>
